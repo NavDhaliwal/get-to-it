@@ -1,0 +1,10 @@
+.board
+{
+  border: solid 10px black;  
+  width: 100%;
+}
+
+.location-img
+{
+	width: 5%;
+}

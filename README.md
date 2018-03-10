@@ -41,6 +41,7 @@ Actions:
 	3) Take another player's best card and give her your worst.
 	4) Ignore toll while passing a path.
 	5) Take the best from top 3 action cards
+	6) Kidnap and tie you down another person they are at the same location.
 
 ================================================================================================
 

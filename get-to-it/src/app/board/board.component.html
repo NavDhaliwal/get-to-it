@@ -1,0 +1,6 @@
+<canvas class="board" (click)="onClickCanvas()">
+	<img *ngFor="let location of locationArray" [src]="location" class="location-img" 
+		[ngStyle]="{backgroundColor: getColor(times)}" 
+		[ngClass]="{overLimit: times>4}"/>
+</canvas>
+
