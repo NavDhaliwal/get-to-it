@@ -3,6 +3,12 @@ Board game like snakes and ladders but with a bit more strategy.
 
 Technologies used until now: Angular 5, NodeJS, Express
 
+How to run the App:
+Install all the dependencies mention in the package.json file using "npm install"
+run 'ng build' to build the Angular App
+run 'nodemon' to serve the App using nodejs.
+go to 'localhost:3000'
+
 
 
 
