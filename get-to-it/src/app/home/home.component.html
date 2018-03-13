@@ -1,0 +1,48 @@
+
+<div id="home">
+  <!-- main -->
+  <table *ngIf="pageStatus==='default'">
+    <!-- <tr> -->
+      <tr>
+        <button type="button" class="btn btn-primary" (click)="joinRoom()">Join room</button>
+      </tr>
+      <tr>
+        <button type="button" class="btn btn-primary" (click)="createRoom()">Create room</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
+  <!-- Join room clicked -->
+  <table *ngIf="pageStatus==='join'">
+    <!-- <tr> -->
+      <tr>
+        <label for="roomname-id">Enter room name</label>
+        <input id="roomname-id" type="text" [maxlength]="maxRoomLen" [(ngModel)] = "roomname" (input)="validateRoomName()">
+      </tr>
+      <tr>
+        <label for="playertag-id">Enter your tag</label>
+        <input id="playertag-id" type="text" [(ngModel)] = "playerTag" (input)="validatePlayerTag()">
+      </tr>
+      <tr>
+        <button class="btn btn-primary" *ngIf="roomValidated && playerValidated" (click)="startGame()">Join room</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="setDefaultPage()">Back</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
+  <!-- Create room -->
+  <table *ngIf="pageStatus==='create1'">
+    <!-- <tr> -->
+      <tr>
+        <button class="btn btn-primary" (click)="createCustomMap()">Create custom map</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="showAllMaps()">Browse Maps</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="setDefaultPage()">Back</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
+</div>
+<router-outlet></router-outlet>

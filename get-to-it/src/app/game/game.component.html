@@ -1,0 +1,29 @@
+<div>
+  <div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+    <h5>
+      <table id="infotable-id">
+        <tr>
+          <th id="room-id">Room:</th>
+          <th id="mapname-id">Map name: </th>
+          <th id="players-id">Players:</th>
+        </tr>
+      </table>
+    </h5>
+
+  </div>
+
+  <p *ngFor="let locationItr of locationMgr.locations">{{ locationItr.locationName }}</p>
+
+  <app-board></app-board>
+
+  <footer>
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  </footer>
+
+  <router-outlet></router-outlet>
+</div>
+
+
