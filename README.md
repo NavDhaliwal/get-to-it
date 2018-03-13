@@ -1,12 +1,12 @@
 # get-to-it
 Board game like snakes and ladders but with a bit more strategy.
 
+Technologies used until now: Angular 5, NodeJS, Express
 
 
 
 
-
-================================== RULES ========================================================
+================================== RULES ====================
 
 
 Components:
@@ -21,17 +21,17 @@ Components:
 	2) Action cards
 
 
-================================================================================================
+==============================================================
 
-On your turn:
+On your turn: (exact implementations TBD)
 
 1) Pick a card from the deck.
 2) Play the card or discard a card.
 3) Put a toll on any path which the player shares on its current position and collect toll from other players who want to pass. The toll can vary depending on a person's mood or bargaining power but max can be 10/max numbered card in the game. Players can negotiate.
 
-================================================================================================
+==============================================================
 
-Actions:
+Actions: (exact implementations TBD)
 
 	Playing a card:
 
@@ -42,9 +42,6 @@ Actions:
 	4) Ignore toll while passing a path.
 	5) Take the best from top 3 action cards
 	6) Kidnap and tie you down another person they are at the same location.
-
-================================================================================================
-
-================================================================================================
+	7) Put construction barriers.
 
 
