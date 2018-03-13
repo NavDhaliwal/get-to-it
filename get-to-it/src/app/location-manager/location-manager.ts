@@ -1,6 +1,6 @@
 import { Location, LocationComponent } from '../location/location.component';
 
-const fs = require('fs');
+const fs = require("fs");
 
 export class LocationManager
 {

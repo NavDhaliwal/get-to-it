@@ -8,14 +8,64 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Get to It!!';
-  locationMgr: LocationManager;
-  @ViewChild(BoardComponent) board: BoardComponent;
-
+  
+  pageStatus: string = 'default';
+  roomname:string = '';
+  roomValidated:boolean=false;
+  playerValidated:boolean=false;
+  maxRoomLen:number=4;
+  playerTag:string;
   ngOnInit() 
   {
-  	this.locationMgr = new LocationManager();
-  	//extract Locations to use.
-  	this.locationMgr.createNewLocationEnvironment('');
   }
+  joinRoom()
+  {
+  	this.pageStatus='join';
+  }
+  createRoom()
+  {
+  	//loading screen
+  	this.pageStatus='create1';
+  }
+  setDefaultPage()
+  {
+  	this.pageStatus='default';
+  	this.roomname='';
+  	this.playerTag='';
+  	this.roomValidated=false;
+  	this.playerValidated=false;
+  }
+  validateRoomName()
+  {
+  	if(this.roomname.length===this.maxRoomLen)
+  	{
+  		//validate backend
+  		this.roomValidated=true;
+  	}
+  	else
+  	{
+  		this.roomValidated=false;
+  	}
+  }
+  validatePlayerTag()
+  {
+  	if(this.playerTag.length>0)
+  	{
+  		//check in backend for valid names
+  		this.playerValidated=true;
+  	}
+  	else
+  	{
+  		this.playerValidated=false;
+  	}
+  }
+  startGame()
+  {
+  	//route to the game page
+  }
+  createCustomMap()
+  {
+  }
+  showAllMaps()
+  {}
 }

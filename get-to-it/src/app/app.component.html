@@ -1,26 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-  <h5>
-    <table id="infotable-id">
+<div id="home">
+  <!-- main -->
+  <table *ngIf="pageStatus==='default'">
+    <!-- <tr> -->
       <tr>
-        <th id="room-id">Room:</th>
-        <th id="mapname-id">Map name: </th>
-        <th id="players-id">Players:</th>
+        <button class="btn btn-primary" (click)="joinRoom()">Join room</button>
       </tr>
-    </table>
-  </h5>
+      <tr>
+        <button class="btn btn-primary" (click)="createRoom()">Create room</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
+  <!-- Join room clicked -->
+  <table *ngIf="pageStatus==='join'">
+    <!-- <tr> -->
+      <tr>
+        <label for="roomname-id">Enter room name</label>
+        <input id="roomname-id" type="text" [maxlength]="maxRoomLen" [(ngModel)] = "roomname" (input)="validateRoomName()">
+      </tr>
+      <tr>
+        <label for="playertag-id">Enter your tag</label>
+        <input id="playertag-id" type="text" [(ngModel)] = "playerTag" (input)="validatePlayerTag()">
+      </tr>
+      <tr>
+        <button class="btn btn-primary" *ngIf="roomValidated && playerValidated" (click)="startGame()">Join room</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="setDefaultPage()">Back</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
+  <!-- Create room -->
+  <table *ngIf="pageStatus==='create1'">
+    <!-- <tr> -->
+      <tr>
+        <button class="btn btn-primary" (click)="createCustomMap()">Create custom map</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="showAllMaps()">Browse Maps</button>
+      </tr>
+      <tr>
+        <button class="btn btn-primary" (click)="setDefaultPage()">Back</button>
+      </tr>
+    <!-- </tr> -->
+  </table>
 
 </div>
-
-<p *ngFor="let locationItr of locationMgr.locations">{{ locationItr.locationName }}</p>
-
-<app-board></app-board>
-
-<footer>
-  <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-</footer>
-
-
