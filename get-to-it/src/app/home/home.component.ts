@@ -1,6 +1,7 @@
-import { LocationManager } from '../location-manager/location-manager';
 import { BoardComponent } from '../board/board.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DataClient } from "../../services/dataclient";
+import { IDataObserver } from "../../services/IDataObserver";
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import {Router} from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements IDataObserver{
   
   private pageStatus: string = 'default';
   private roomname:string = '';
@@ -16,12 +17,14 @@ export class HomeComponent implements OnInit {
   private playerValidated:boolean=false;
   private maxRoomLen:number=4;
   private playerTag:string;
+  private dataClient:DataClient = DataClient.getInstance();
   constructor(private router: Router) 
   {
   	console.log('Routing constructor');
   	this.setDefaultPage();
+  	this.dataClient.subscribe(this);
   }
-  ngOnInit() 
+  ReceiveNotification<T>(Message: T)
   {
   }
   joinRoom()
@@ -46,6 +49,7 @@ export class HomeComponent implements OnInit {
   	if(this.roomname.length===this.maxRoomLen)
   	{
   		//validate backend
+  		// this.dataClient.sendMessageToServer();
   		this.roomValidated=true;
   	}
   	else

@@ -1,4 +1,4 @@
-import { LocationManager } from '../location-manager/location-manager';
+import { CardDeck } from '../../classes/card_deck';
 import { BoardComponent } from '../board/board.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -9,13 +9,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class GameComponent {
   title = 'Get to It!!';
-  locationMgr: LocationManager;
+  cardDeck:CardDeck;
   @ViewChild(BoardComponent) board: BoardComponent;
 
   ngOnInit() 
   {
-  	this.locationMgr = new LocationManager();
-  	//extract Locations to use.
-  	this.locationMgr.createNewLocationEnvironment('');
+    console.log("Game component init");
   }
 }

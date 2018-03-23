@@ -10,6 +10,7 @@ import { GameComponent } from './game/game.component';
 import { BoardComponent } from './board/board.component';
 import { LocationComponent } from './location/location.component';
 import { HomeComponent } from './home/home.component';
+import { CardComponentComponent } from './card-component/card-component.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
     BoardComponent,
     LocationComponent,
     GameComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponentComponent
   ],
   imports: [
     BrowserModule,
